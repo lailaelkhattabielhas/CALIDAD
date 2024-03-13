@@ -25,6 +25,9 @@ public class HomeScreen extends AppCompatActivity {
         navigation.getMenu().getItem(1).setChecked(true);
         loadFragment(secondFragment);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        //flecha hacia atras en la barra de navegacion
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
     private final BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
@@ -58,6 +61,16 @@ public class HomeScreen extends AppCompatActivity {
 
     public BottomNavigationView getNavigation() {
         return navigation;
+    }
+
+    // Manejar el evento de clic en la flecha hacia atrás (icono de "home")
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed(); // Volver al inicio
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
 
