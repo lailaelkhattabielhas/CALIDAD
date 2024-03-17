@@ -18,10 +18,10 @@ import com.google.gson.Gson;
 
 public class ShowTask extends AppCompatActivity {
 
-    private task t;
+    private task task;
     private ListManager list;
-    private Button borrar;
-    private Button volver;
+    private Button deleteButton;
+    private Button returnButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,17 +31,17 @@ public class ShowTask extends AppCompatActivity {
 
         TextView name = findViewById(R.id.name);
         TextView date = findViewById(R.id.date);
-        borrar = findViewById(R.id.borrar);
-        volver = findViewById(R.id.volver);
+        deleteButton = findViewById(R.id.borrar);
+        returnButton = findViewById(R.id.volver);
 
         Intent intent = getIntent();
 
         if(getIntent().getExtras() != null) {
-            t = (task) intent.getSerializableExtra("task");
+            task = (task) intent.getSerializableExtra("task");
             list = (ListManager) intent.getSerializableExtra("list");
             int pos = (int) intent.getSerializableExtra("index");
-            name.setText(t.getText());
-            date.setText(t.getDate());
+            name.setText(task.getText());
+            date.setText(task.getDate());
             saveData();
 
 
@@ -60,7 +60,7 @@ public class ShowTask extends AppCompatActivity {
         editor.apply();
 
 
-    borrar.setOnClickListener(new View.OnClickListener() {
+    deleteButton.setOnClickListener(new View.OnClickListener() {
         public void onClick(View v) {
             Intent intent = getIntent();
             int pos = (int) intent.getSerializableExtra("index");
@@ -68,7 +68,7 @@ public class ShowTask extends AppCompatActivity {
         }
 });
 
-    volver.setOnClickListener(new View.OnClickListener() {
+    returnButton.setOnClickListener(new View.OnClickListener() {
         public void onClick(View v) {
             //Intent intent = getIntent();
             Intent intent = new Intent(ShowTask.this, HomeScreen.class);
