@@ -8,25 +8,25 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setupStartButton();
+    }
 
-
-        Button start = findViewById(R.id.startButton);
-
-        start.setOnClickListener(new View.OnClickListener() {
+    private void setupStartButton() {
+        Button startButton = findViewById(R.id.startButton);
+        startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent intent = new Intent(MainActivity.this, HomeScreen.class);
-                startActivity(intent);
+                startHomeScreen();
             }
         });
     }
 
-
-
+    private void startHomeScreen() {
+        Intent intent = new Intent(MainActivity.this, HomeScreen.class);
+        startActivity(intent);
+    }
 }
