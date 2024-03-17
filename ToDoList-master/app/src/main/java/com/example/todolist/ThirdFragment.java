@@ -26,20 +26,7 @@ import java.util.ArrayList;
  * Use the {@link ThirdFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ThirdFragment extends Fragment {
-
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    private ListManager listManager;
-
-    private HomeScreen homeScreen;
-
-
+public class ThirdFragment extends BaseFragment {
 
     public ThirdFragment(HomeScreen homeScreen) {
         // Required empty public constructor
@@ -54,15 +41,6 @@ public class ThirdFragment extends Fragment {
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -93,25 +71,5 @@ public class ThirdFragment extends Fragment {
         return view;
     }
 
-    private void loadData() {
-        SharedPreferences sharedPreferences= this.getActivity().getSharedPreferences("pref", Context.MODE_PRIVATE);
-        Gson gson = new Gson();
-        String json = sharedPreferences.getString("tasklist", null);
-        Type type = new TypeToken<ListManager>() {}.getType();
-        listManager = gson.fromJson(json, type);
 
-        if (listManager == null){ //Si la lista está vacía
-
-            //Crear lista y guardar lista de tareas en listManager
-            listManager = new ListManager();
-
-
-            //Mostrar mensaje "se crea"
-            int duration = Toast.LENGTH_SHORT;
-            CharSequence text = "Se crea lista vacia";
-            Toast toast = Toast.makeText(this.getActivity(), text, duration);
-            toast.show();
-
-        }
-    }
 }

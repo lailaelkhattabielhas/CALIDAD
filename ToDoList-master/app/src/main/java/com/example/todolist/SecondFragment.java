@@ -27,20 +27,10 @@ import java.lang.reflect.Type;
  * Use the {@link SecondFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SecondFragment extends Fragment {
+public class SecondFragment extends BaseFragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    private ListManager listManager;
-
-    private HomeScreen homeScreen;
 
     public SecondFragment(HomeScreen homeScreen) {
         // Required empty public constructor
@@ -65,14 +55,6 @@ public class SecondFragment extends Fragment {
         return fragment;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -100,36 +82,6 @@ public class SecondFragment extends Fragment {
         });
 
         return view;
-    }
-
-    private void loadData() {
-        SharedPreferences sharedPreferences= this.getActivity().getSharedPreferences("pref", Context.MODE_PRIVATE);
-        Gson gson = new Gson();
-        String json = sharedPreferences.getString("tasklist", null);
-        Type type = new TypeToken<ListManager>() {}.getType();
-        listManager = gson.fromJson(json, type);
-
-        if (listManager == null){ //Si la lista está vacía
-
-            //Crear lista y guardar lista de tareas en listManager
-            listManager = new ListManager();
-
-
-            //Mostrar mensaje "se crea"
-            int duration = Toast.LENGTH_SHORT;
-            CharSequence text = "Se crea lista vacia";
-            Toast toast = Toast.makeText(this.getActivity(), text, duration);
-            toast.show();
-
-        }
-    }
-    private void saveData() {
-        SharedPreferences sharedPreferences= this.getActivity().getSharedPreferences("pref", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        Gson gson = new Gson();
-        String json = gson.toJson(listManager);
-        editor.putString("tasklist", json);
-        editor.apply();
     }
 
 }
