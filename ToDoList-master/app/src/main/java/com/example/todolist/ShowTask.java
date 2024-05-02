@@ -1,54 +1,60 @@
 package com.example.todolist;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
+import androidx.appcompat.app.AlertDialog;
 
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.widget.TextView;
-import android.widget.Button;
 import android.view.View;
-
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 import com.google.gson.Gson;
 
 public class ShowTask extends AppCompatActivity {
 
-    private task t;
+    private task task;
     private ListManager list;
-    private Button borrar;
-    private Button volver;
+    private Button deleteButton;
+    private Button returnButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_task);
 
         TextView name = findViewById(R.id.name);
         TextView date = findViewById(R.id.date);
-        borrar = findViewById(R.id.borrar);
-        volver = findViewById(R.id.volver);
+        deleteButton = findViewById(R.id.borrar);
+        returnButton = findViewById(R.id.volver);
 
         Intent intent = getIntent();
 
         if(getIntent().getExtras() != null) {
-            t = (task) intent.getSerializableExtra("task");
+            task = (task) intent.getSerializableExtra("task");
             list = (ListManager) intent.getSerializableExtra("list");
             int pos = (int) intent.getSerializableExtra("index");
-            name.setText(t.getText());
-            date.setText(t.getDate());
+            name.setText(task.getText());
+            date.setText(task.getDate());
             saveData();
-
-
         } else {
             name.setText("Ha ocurrido un error");
         }
 
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                removeTask();
+            }
+        });
+
+        returnButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                returnToHomeScreen();
+            }
+        });
     }
 
     private void saveData() {
@@ -58,44 +64,35 @@ public class ShowTask extends AppCompatActivity {
         String json = gson.toJson(list);
         editor.putString("tasklist", json);
         editor.apply();
+    }
 
+    private void removeTask() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("¿Está seguro que desea borrar esta tarea?");
 
-    borrar.setOnClickListener(new View.OnClickListener() {
-        public void onClick(View v) {
-            Intent intent = getIntent();
-            int pos = (int) intent.getSerializableExtra("index");
-            removeTask(pos);
-        }
-});
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                int pos = getIntent().getIntExtra("index", -1);
+                if (pos != -1) {
+                    list.borrar(pos);
+                    saveData();
+                    returnToHomeScreen();
+                }
+            }
+        });
 
-    volver.setOnClickListener(new View.OnClickListener() {
-        public void onClick(View v) {
-            //Intent intent = getIntent();
-            Intent intent = new Intent(ShowTask.this, HomeScreen.class);
-            startActivity(intent);
-        }
-});
-}
+        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // User cancelled the dialog
+            }
+        });
 
-private void removeTask(int pos){
-    AlertDialog.Builder builder = new AlertDialog.Builder(this);
-    builder.setMessage("¿Está seguro que desea borrar esta tarea?");
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
 
-    // Add the buttons
-    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-        public void onClick(DialogInterface dialog, int id) {
-            list.borrar(pos);
-            saveData();
-            Intent intent = new Intent(ShowTask.this, HomeScreen.class);
-            startActivity(intent);
-        }
-    });
-    builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
-        public void onClick(DialogInterface dialog, int id) {
-            // User cancelled the dialog
-        }
-    });
-    AlertDialog dialog = builder.create();
-    dialog.show();
-}
+    private void returnToHomeScreen() {
+        Intent intent = new Intent(ShowTask.this, HomeScreen.class);
+        startActivity(intent);
+    }
 }
