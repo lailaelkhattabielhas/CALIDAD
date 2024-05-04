@@ -16,10 +16,10 @@ import com.google.gson.Gson;
 
 public class ShowTask extends AppCompatActivity {
 
-    private task task;
-    private ListManager list;
-    private Button deleteButton;
-    private Button returnButton;
+    public task task;
+    public ListManager list;
+    public Button deleteButton;
+    public Button returnButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

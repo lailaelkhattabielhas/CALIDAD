@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.todolist.app-mergeDebugResources-56:/values-ro/values-ro.xml",
+            "outputFile": "com.example.todolist.app-mergeDebugResources-52:/values-ro/values-ro.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Laila\\.gradle\\caches\\transforms-3\\684dce3efb33c0f364c12bf558fa9216\\transformed\\material-1.9.0\\res\\values-ro\\values-ro.xml",

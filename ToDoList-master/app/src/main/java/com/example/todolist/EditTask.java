@@ -25,6 +25,7 @@ import java.util.ArrayList;
 public class EditTask extends AppCompatActivity {
 
 
+    public DatePicker datePicker;
     private ListManager listManager;
     private String textousu, fechausu, fechausu2;
     private task t;
@@ -163,7 +164,7 @@ public class EditTask extends AppCompatActivity {
     }
 
 
-    private void editTask(){
+    public void editTask(){
 
         task tareaNueva = new task(textousu, fechausu,year,month,day,fechausu2, color);
 

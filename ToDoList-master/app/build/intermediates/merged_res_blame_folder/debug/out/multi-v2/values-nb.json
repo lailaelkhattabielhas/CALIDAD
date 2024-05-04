@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.todolist.app-mergeDebugResources-56:/values-nb/values-nb.xml",
+            "outputFile": "com.example.todolist.app-mergeDebugResources-52:/values-nb/values-nb.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Laila\\.gradle\\caches\\transforms-3\\6b60d0944b2ff89e8b653dc97ddb6213\\transformed\\ui-1.4.0\\res\\values-nb\\values-nb.xml",

@@ -1,8 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.todolist.app-mergeDebugResources-56:/values/values.xml",
+            "outputFile": "com.example.todolist.app-mergeDebugResources-52:/values/values.xml",
             "map": [
+                {
+                    "source": "C:\\Users\\Laila\\Desktop\\versionDefinitiva\\CALIDAD\\ToDoList-master\\app\\src\\main\\res\\values\\themes.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "102",
+                        "endLines": "15",
+                        "endColumns": "12",
+                        "endOffsets": "793"
+                    },
+                    "to": {
+                        "startLines": "6501",
+                        "startColumns": "4",
+                        "startOffsets": "454382",
+                        "endLines": "6514",
+                        "endColumns": "12",
+                        "endOffsets": "454939"
+                    }
+                },
                 {
                     "source": "C:\\Users\\Laila\\.gradle\\caches\\transforms-3\\684dce3efb33c0f364c12bf558fa9216\\transformed\\material-1.9.0\\res\\values\\values.xml",
                     "from": {
@@ -39,6 +58,25 @@
                         "endLines": "35,649,650,651,652,1053,1054,1055,2177,5498,5501,5504,10086",
                         "endColumns": "51,60,61,61,63,58,56,53,12,12,12,12,24",
                         "endOffsets": "1687,33476,33538,33600,33664,62477,62534,62588,153884,384938,385064,385192,662975"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Laila\\Desktop\\versionDefinitiva\\CALIDAD\\ToDoList-master\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "0",
+                        "startOffsets": "53",
+                        "endLines": "9",
+                        "endColumns": "8",
+                        "endOffsets": "269"
+                    },
+                    "to": {
+                        "startLines": "5489",
+                        "startColumns": "4",
+                        "startOffsets": "384665",
+                        "endLines": "5496",
+                        "endColumns": "8",
+                        "endOffsets": "384874"
                     }
                 },
                 {
@@ -95,6 +133,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\Laila\\Desktop\\versionDefinitiva\\CALIDAD\\ToDoList-master\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "1,3,5,4",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "17,123,285,210",
+                        "endColumns": "45,85,65,73",
+                        "endOffsets": "58,204,346,279"
+                    },
+                    "to": {
+                        "startLines": "1965,1992,2127,2128",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "129373,132145,150342,150408",
+                        "endColumns": "45,85,65,73",
+                        "endOffsets": "129414,132226,150403,150477"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Laila\\.gradle\\caches\\transforms-3\\295eb4f50134499b8879adcb32ee146f\\transformed\\fragment-1.3.6\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5,10",
@@ -111,25 +166,6 @@
                         "endLines": "1790,1827,1864,11324,11328",
                         "endColumns": "56,64,63,24,24",
                         "endOffsets": "118747,120669,122583,711048,711197"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Laila\\Desktop\\CURSO 2023-2024\\SEGUNDO CUATRIMESTRE\\CALIDAD\\PRACTICA\\PracticaDefinitivaFinal\\CALIDAD\\ToDoList-master\\app\\src\\main\\res\\values\\styles.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "0",
-                        "startOffsets": "53",
-                        "endLines": "9",
-                        "endColumns": "8",
-                        "endOffsets": "269"
-                    },
-                    "to": {
-                        "startLines": "5489",
-                        "startColumns": "4",
-                        "startOffsets": "384665",
-                        "endLines": "5496",
-                        "endColumns": "8",
-                        "endOffsets": "384874"
                     }
                 },
                 {
@@ -300,25 +336,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Laila\\Desktop\\CURSO 2023-2024\\SEGUNDO CUATRIMESTRE\\CALIDAD\\PRACTICA\\PracticaDefinitivaFinal\\CALIDAD\\ToDoList-master\\app\\src\\main\\res\\values\\themes.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "102",
-                        "endLines": "15",
-                        "endColumns": "12",
-                        "endOffsets": "793"
-                    },
-                    "to": {
-                        "startLines": "6501",
-                        "startColumns": "4",
-                        "startOffsets": "454382",
-                        "endLines": "6514",
-                        "endColumns": "12",
-                        "endOffsets": "454939"
-                    }
-                },
-                {
                     "source": "C:\\Users\\Laila\\.gradle\\caches\\transforms-3\\625358ebb3efc4f994c662f85b0c5cd5\\transformed\\customview-poolingcontainer-1.0.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3",
@@ -333,6 +350,23 @@
                         "startOffsets": "118979,120127",
                         "endColumns": "53,66",
                         "endOffsets": "119028,120189"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Laila\\Desktop\\versionDefinitiva\\CALIDAD\\ToDoList-master\\app\\src\\main\\res\\values\\colors.xml",
+                    "from": {
+                        "startLines": "18,8,15,16,11,10,14,13,5,2,3,4,12,6,7,9,17",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "779,336,656,696,475,422,615,573,201,57,105,153,534,244,290,379,737",
+                        "endColumns": "38,41,38,39,57,51,39,40,41,46,46,46,37,44,44,41,40",
+                        "endOffsets": "813,373,690,731,528,469,650,609,238,99,147,195,567,284,330,416,773"
+                    },
+                    "to": {
+                        "startLines": "634,639,640,653,654,655,699,949,950,951,952,953,954,965,966,969,970",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "32340,32698,32740,33669,33709,33767,36788,55656,55697,55739,55786,55833,55880,56615,56660,56826,56868",
+                        "endColumns": "38,41,38,39,57,51,39,40,41,46,46,46,37,44,44,41,40",
+                        "endOffsets": "32374,32735,32774,33704,33762,33814,36823,55692,55734,55781,55828,55875,55913,56655,56700,56863,56904"
                     }
                 },
                 {
@@ -386,40 +420,6 @@
                         "startOffsets": "120290,122360",
                         "endColumns": "41,59",
                         "endOffsets": "120327,122415"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Laila\\Desktop\\CURSO 2023-2024\\SEGUNDO CUATRIMESTRE\\CALIDAD\\PRACTICA\\PracticaDefinitivaFinal\\CALIDAD\\ToDoList-master\\app\\src\\main\\res\\values\\strings.xml",
-                    "from": {
-                        "startLines": "1,3,5,4",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "17,123,285,210",
-                        "endColumns": "45,85,65,73",
-                        "endOffsets": "58,204,346,279"
-                    },
-                    "to": {
-                        "startLines": "1965,1992,2127,2128",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "129373,132145,150342,150408",
-                        "endColumns": "45,85,65,73",
-                        "endOffsets": "129414,132226,150403,150477"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Laila\\Desktop\\CURSO 2023-2024\\SEGUNDO CUATRIMESTRE\\CALIDAD\\PRACTICA\\PracticaDefinitivaFinal\\CALIDAD\\ToDoList-master\\app\\src\\main\\res\\values\\colors.xml",
-                    "from": {
-                        "startLines": "18,8,15,16,11,10,14,13,5,2,3,4,12,6,7,9,17",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "779,336,656,696,475,422,615,573,201,57,105,153,534,244,290,379,737",
-                        "endColumns": "38,41,38,39,57,51,39,40,41,46,46,46,37,44,44,41,40",
-                        "endOffsets": "813,373,690,731,528,469,650,609,238,99,147,195,567,284,330,416,773"
-                    },
-                    "to": {
-                        "startLines": "634,639,640,653,654,655,699,949,950,951,952,953,954,965,966,969,970",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "32340,32698,32740,33669,33709,33767,36788,55656,55697,55739,55786,55833,55880,56615,56660,56826,56868",
-                        "endColumns": "38,41,38,39,57,51,39,40,41,46,46,46,37,44,44,41,40",
-                        "endOffsets": "32374,32735,32774,33704,33762,33814,36823,55692,55734,55781,55828,55875,55913,56655,56700,56863,56904"
                     }
                 },
                 {

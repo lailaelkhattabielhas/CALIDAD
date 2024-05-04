@@ -41,6 +41,9 @@ public class FirstFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    public SharedPreferences sharedPreferences;
+    public EditText texto;
+    public DatePicker fecha;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -53,7 +56,7 @@ public class FirstFragment extends Fragment {
     private int month;
     private int year;
     private String color;
-    private Spinner spinner;
+    Spinner spinner;
     private ArrayList<String> colors;
 
 
@@ -185,7 +188,7 @@ public class FirstFragment extends Fragment {
         return view;
     }
 
-    private void saveData() {
+    void saveData() {
         SharedPreferences sharedPreferences= this.getActivity().getSharedPreferences("pref", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         Gson gson = new Gson();
@@ -194,7 +197,7 @@ public class FirstFragment extends Fragment {
         editor.apply();
     }
 
-    private void loadData() {
+    void loadData() {
         SharedPreferences sharedPreferences= this.getActivity().getSharedPreferences("pref", Context.MODE_PRIVATE);
         Gson gson = new Gson();
         String json = sharedPreferences.getString("tasklist", null);
@@ -217,7 +220,7 @@ public class FirstFragment extends Fragment {
     }
 
 
-    private void addTask(){
+    void addTask(){
 
 
 
