@@ -26,7 +26,11 @@ public class EditTask extends AppCompatActivity {
 
 
     public DatePicker datePicker;
-    private ListManager listManager;
+    public ListManager listManager;
+    public SharedPreferences sharedPreferences;
+    public EditText texto;
+    public DatePicker fecha;
+
     private String textousu, fechausu, fechausu2;
     private task t;
     private ListManager list;
@@ -34,7 +38,7 @@ public class EditTask extends AppCompatActivity {
     private int day;
     private int month;
     private int year;
-    private Spinner spinner;
+    Spinner spinner;
     private ArrayList<String> colors;
     private String color;
 
@@ -132,7 +136,7 @@ public class EditTask extends AppCompatActivity {
         });
     }
 
-    private void saveData() {
+    void saveData() {
         SharedPreferences sharedPreferences= this.getSharedPreferences("pref", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         Gson gson = new Gson();
@@ -141,7 +145,7 @@ public class EditTask extends AppCompatActivity {
         editor.apply();
     }
 
-    private void loadData() {
+    void loadData() {
         SharedPreferences sharedPreferences= this.getSharedPreferences("pref", Context.MODE_PRIVATE);
         Gson gson = new Gson();
         String json = sharedPreferences.getString("tasklist", null);
