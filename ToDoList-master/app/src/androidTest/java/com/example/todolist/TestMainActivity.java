@@ -11,11 +11,11 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import org.junit.Rule;
 import org.junit.Test;
 
-public class TestInterfazMainActivity {
+public class TestMainActivity {
     @Rule
     public ActivityScenarioRule<MainActivity> activityRule = new ActivityScenarioRule<>(MainActivity.class);
     @Test
-    public void testStartButton() {
+    public void testInterfazStartButton() {
         onView(withId(R.id.startButton)).perform(click());
         onView(withId(R.id.frame_container)).check(matches(isDisplayed()));
     }
