@@ -11,7 +11,7 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import org.junit.Rule;
 import org.junit.Test;
 
-public class TestInterfazHomeScreen {
+public class TestHomeScreen {
     @Rule
     public ActivityScenarioRule<HomeScreen> activityRule = new ActivityScenarioRule<>(HomeScreen.class);
     @Test
