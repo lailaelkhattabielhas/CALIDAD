@@ -15,9 +15,10 @@ public class TaskStubTest {
         int day = 3;
         String dateOrd = "03/05/2024";
         String color = "blue";
+        String note = "Remember potatoes";
 
         // Act
-        TaskStub task = new TaskStub(text, date, year, month, day, dateOrd, color);
+        TaskStub task = new TaskStub(text, date, year, month, day, dateOrd, color, note);
 
         // Assert
         assertEquals(text, task.getText());
@@ -31,8 +32,8 @@ public class TaskStubTest {
 }
 
 class TaskStub extends task {
-    public TaskStub(String text, String date, int year, int month, int day, String date2, String color) {
-        super(text, date, year, month, day, date2, color);
+    public TaskStub(String text, String date, int year, int month, int day, String date2, String color, String note) {
+        super(text, date, year, month, day, date2, color, note);
     }
 
     @Override

@@ -17,8 +17,6 @@ import static org.hamcrest.CoreMatchers.anything;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.Matchers.allOf;
-
-
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 
 import org.junit.Rule;

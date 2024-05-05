@@ -31,7 +31,7 @@ public class EditTask extends AppCompatActivity {
     public EditText texto;
     public DatePicker fecha;
 
-    private String textousu, fechausu, fechausu2;
+    private String textousu, fechausu, fechausu2, noteusu;
     private task t;
     private ListManager list;
     private int pos;
@@ -60,6 +60,8 @@ public class EditTask extends AppCompatActivity {
 
         EditText texto = findViewById(R.id.textousuario);
         texto.setText(t.getText());
+        EditText note = findViewById(R.id.notausuario);
+        note.setText(t.getNote());
 
 
         DatePicker fecha= findViewById(R.id.fechausuario);
@@ -88,6 +90,7 @@ public class EditTask extends AppCompatActivity {
 
                 //Intent intent = new Intent(getContext(), SecondFragment.class);
                 textousu = texto.getText().toString();
+                noteusu = note.getText().toString();
                 day = fecha.getDayOfMonth();
                 month = fecha.getMonth(); // Los meses comienzan en 0
                 year = fecha.getYear();
@@ -170,7 +173,7 @@ public class EditTask extends AppCompatActivity {
 
     public void editTask(){
 
-        task tareaNueva = new task(textousu, fechausu,year,month,day,fechausu2, color);
+        task tareaNueva = new task(textousu, fechausu,year,month,day,fechausu2, color, noteusu);
 
         listManager.addTaskbyPos(tareaNueva,pos);
 

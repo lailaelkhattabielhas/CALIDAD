@@ -1,6 +1,10 @@
 package com.example.todolist;
-import org.junit.Test;
+
 import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.Test;
+
 
 
 
@@ -17,9 +21,10 @@ public class TaskUnitTest {
         int day = 3;
         String dateOrd = "03/05/2024";
         String color = "blue";
+        String note = "Remember potatoes";
 
         // Act
-        task task = new task(text, date, year, month, day, dateOrd, color);
+        task task = new task(text, date, year, month, day, dateOrd, color,note);
 
         // Assert
         assertEquals(text, task.getText());

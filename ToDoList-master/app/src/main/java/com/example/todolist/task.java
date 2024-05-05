@@ -12,8 +12,9 @@ public class task implements Serializable {
     private int year;
     private String dateOrd;
     private String color;
+    private String note;
 
-    public task(String text, String date,int year, int month, int day, String date2, String color) {
+    public task(String text, String date,int year, int month, int day, String date2, String color,String note) {
         this.year = year;
         this.month= month;
         this.day= day;
@@ -21,6 +22,7 @@ public class task implements Serializable {
         this.date = date;
         this.dateOrd = date2;
         this.color = color;
+        this.note=note;
 
     }
 
@@ -78,5 +80,13 @@ public class task implements Serializable {
 
     public void setDateOrd(String date) {
         this.dateOrd = date;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
     }
 }

@@ -27,6 +27,7 @@ public class ShowTask extends AppCompatActivity {
         setContentView(R.layout.activity_show_task);
 
         TextView name = findViewById(R.id.name);
+        TextView note = findViewById(R.id.note);
         TextView date = findViewById(R.id.date);
         deleteButton = findViewById(R.id.borrar);
         returnButton = findViewById(R.id.volver);
@@ -38,6 +39,7 @@ public class ShowTask extends AppCompatActivity {
             list = (ListManager) intent.getSerializableExtra("list");
             int pos = (int) intent.getSerializableExtra("index");
             name.setText(task.getText());
+            note.setText(task.getNote());
             date.setText(task.getDate());
             saveData();
         } else {

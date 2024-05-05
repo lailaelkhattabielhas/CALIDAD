@@ -51,7 +51,7 @@ public class FirstFragment extends Fragment {
 
     private HomeScreen homeScreen;
     private ListManager listManager;
-    String textousu, fechausu, fechausu2;
+    String textousu, fechausu, fechausu2, noteusu;
     private int day;
     private int month;
     private int year;
@@ -98,6 +98,7 @@ public class FirstFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_first, container, false);
         EditText texto = view.findViewById(R.id.textousuario);
+        EditText note = view.findViewById(R.id.notausuario2);
         DatePicker fecha= view.findViewById(R.id.fechausuario);
         Button btn = view.findViewById(R.id.aceptar);
         Button btn1 = view.findViewById(R.id.cancelar);
@@ -139,6 +140,7 @@ public class FirstFragment extends Fragment {
 
                 //Intent intent = new Intent(getContext(), SecondFragment.class);
                 textousu = texto.getText().toString();
+                noteusu = note.getText().toString();
                 day = fecha.getDayOfMonth();
                 month = fecha.getMonth(); // Los meses comienzan en 0
                 year = fecha.getYear();
@@ -226,7 +228,7 @@ public class FirstFragment extends Fragment {
 
 
         //Crear nueva tarea
-        task tareaNueva = new task(textousu, fechausu,year,month,day,fechausu2,color);
+        task tareaNueva = new task(textousu, fechausu,year,month,day,fechausu2,color, noteusu);
 
         listManager.addTask(tareaNueva);
 

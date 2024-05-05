@@ -36,6 +36,9 @@ id imageView
 id listView
 id name
 id nombreTarea
+id notausuario
+id notausuario2
+id note
 id secondFragment
 id spinner
 id startButton
